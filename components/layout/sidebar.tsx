@@ -11,6 +11,7 @@ const navigation = [
     { name: "Documents", href: "/documents", icon: "description" },
     { name: "Leases", href: "/leases", icon: "assignment" },
     { name: "Reports", href: "/reports", icon: "analytics" },
+    { name: "Profile", href: "/profile", icon: "account_circle" },
 ];
 
 export function Sidebar() {
@@ -27,8 +28,8 @@ export function Sidebar() {
                         key={item.name}
                         href={item.href}
                         className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all group ${pathname === item.href
-                                ? "text-[#a3a6ff] bg-[#1f1f26]"
-                                : "text-[#acaab1] hover:text-white hover:bg-[#1f1f26]"
+                            ? "text-[#a3a6ff] bg-[#1f1f26]"
+                            : "text-[#acaab1] hover:text-white hover:bg-[#1f1f26]"
                             }`}
                     >
                         <span className={`material-symbols-outlined ${pathname === item.href ? "fill-1" : ""}`}>

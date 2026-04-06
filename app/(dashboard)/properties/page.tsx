@@ -105,7 +105,7 @@ export default function PropertiesPage() {
                         <div key={i} className="group relative bg-surface-container-low rounded-2xl overflow-hidden border border-white/5 transition-all hover:bg-surface-container hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40">
                             <div className="h-48 overflow-hidden relative">
                                 <img
-                                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                                     src={prop.image}
                                     alt={prop.name}
                                 />

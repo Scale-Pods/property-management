@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export function TopAppBar() {
     const pathname = usePathname();
@@ -14,6 +15,7 @@ export function TopAppBar() {
             "/properties": "Portfolio Overview",
             "/tenants": "Tenant Directory",
             "/rent": "Financial Ledger",
+            "/profile": "User Profile",
         };
         return titles[path] || "Analytics";
     };
@@ -22,6 +24,7 @@ export function TopAppBar() {
         if (path === "/leases" || path === "/documents") return { group: "Operations", page: path === "/leases" ? "Leases" : "Documents" };
         if (path === "/reports" || path === "/rent") return { group: "Finance", page: path === "/reports" ? "Reports" : "Rent Tracker" };
         if (path === "/tenants" || path === "/properties") return { group: "Management", page: path === "/tenants" ? "Tenants" : "Properties" };
+        if (path === "/profile") return { group: "Account", page: "Profile" };
         return { group: "Dashboard", page: "Summary" };
     };
 
@@ -55,13 +58,13 @@ export function TopAppBar() {
                     <span className="material-symbols-outlined text-[#acaab1] hover:bg-white/5 p-2 rounded-full cursor-pointer transition-colors">notifications</span>
                     <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-[#25252d] border border-white/10 overflow-hidden">
+                <Link href="/profile" className="w-8 h-8 rounded-full bg-[#25252d] border border-white/10 overflow-hidden cursor-pointer hover:border-primary transition-all">
                     <img
                         alt="User Profile"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjYEvYTmRIVNeEDI6siDxIZ5eMIBDbvQb8lgoZv8XRqzWNEgw2ZeCdS4SbUCEaRbKuTgmQWnd0wkaq3mLFjxDKXiMAPlp-J56bKzAmIqae6gKJSLvKVZgg4Drequ8eBfIzzBXCcp4EKi_qVEX6I0pZaqmvrYMr9782CcwH9FNV4f4Xpj1QX3P5lJlDwwNhn8j2VrY57WRvHYTpdDV8epitLA2_GjNqR-91CrrPR3Vg7FLzgJdNlvqCCayi_sHhSqI3jtT7d_Uyf8zB"
                         className="w-full h-full object-cover"
                     />
-                </div>
+                </Link>
             </div>
         </header>
     );
